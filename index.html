@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>♡ Feliz Dia dos Namorados ♡</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="player-card">
+    <!-- CAPA ROTACIONÁVEL COM TEXTO NAS COSTAS -->
+    <div class="cover-container">
+      <div class="cover" id="rotatable-cover">
+        <div class="front">
+          <img src="foto_nossa.jpg" alt="Nossa foto de casal">
+          <button class="details-btn" onclick="toggleDetails()">⋯</button>
+        </div>
+        <div class="back">
+          <p>
+            Hoje comemoramos nosso primeiro dia 12 juntos.<br>
+            Quero te agradecer por ser esta pessoa incriver, 
+            que entrou na minha vida bagunçando o que era arrumado e 
+            arrumando o que era bagunçado. Trouxe equilíbrio sem tirar 
+            minha essência, somou sem precisar ocupar espaço, e foi ficando 
+            de um jeito tão natural que, quando vi, já era impossível imaginar 
+            meus dias sem você. A vida com você tem mais sentido, mais risos, 
+            mais calma(porém depende). Só posso dizer que sou grato por cada 
+            momento que a gente vive juntos — até os mais simples.
+            <br>♡ EU TE AMO ♡
+          </p>
+          <button class="details-btn" onclick="toggleDetails()">⋯</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- LEGENDAS ABAIXO DA IMAGEM -->
+    <div class="caption">
+      <h2>Feliz Dia Dos Namorados</h2>
+      <p class="subtitle">feat. Luiza - Nossa História</p>
+    </div>
+
+    <!-- BARRA DE PROGRESSO E CONTADOR -->
+    <div class="progress">
+      <div class="bar">
+        <div class="fill"></div>
+      </div>
+      <div class="progress-info">
+        <span id="current-time">0 anos 0 meses 0d 0h 0m 0s</span>
+        <span class="duration">∞</span>
+      </div>
+    </div>
+
+    <!-- ÍCONES DE CONTROLE -->
+    <div class="controls">
+      <img src="schuffle.png" alt="Shuffle" class="icon shuffle">
+      <img src="voltar.png" alt="Anterior" class="icon prev">
+      <img src="play.png" alt="Play" class="icon play">
+      <img src="prox.png" alt="Próximo" class="icon next">
+      <img src="repeticao.png" alt="Repetição" class="icon repeat">
+    </div>
+
+    <!-- CONTROLE DE VOLUME -->
+    <div class="volume-control">
+      <img src="vol_min.png" alt="Volume mínimo">
+      <input type="range" id="volume" min="0" max="100" value="100">
+      <img src="vol_max.png" alt="Volume máximo">
+    </div>
+  </div>
+
+  <script>
+    function toggleDetails() {
+      const cover = document.getElementById("rotatable-cover");
+      cover.classList.toggle("rotated");
+    }
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>

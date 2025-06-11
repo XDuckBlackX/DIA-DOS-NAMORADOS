@@ -1,0 +1,204 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #e0e0e0 0%, #8a8a8a 100%);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* CARD */
+.player-card {
+  width: 340px;
+  background: #1c1c1e;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 20px 20px 60px rgba(0,0,0,0.4);
+  padding: 16px;
+}
+
+.cover-container {
+  position: relative;
+  width: 100%;
+  height: 330px;
+  perspective: 1000px;
+}
+
+.cover {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s;
+}
+
+.cover.rotated {
+  transform: rotateY(180deg);
+}
+
+.cover .front,
+.cover .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 0 0 20px 20px;
+  overflow: hidden;
+   border-radius: 20px 20px 20px 20px;
+}
+
+.cover .front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.cover .back {
+  background: #2c2c2e;
+  color: #e5e5e5;
+  transform: rotateY(180deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.details-btn {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  background: rgba(0,0,0,0.5);
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+}
+
+.caption {
+  padding: 12px 16px 0;
+  text-align: left;
+}
+.caption h2 {
+  color: #fff;
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+.caption .subtitle {
+  color: #b3b3b3;
+  font-size: 14px;
+}
+
+.progress {
+  padding: 12px 16px 0;
+}
+.bar {
+  position: relative;
+  background: #3a3a3c;
+  height: 4px;
+  border-radius: 2px;
+  margin: 0 0 4px;
+}
+.bar .fill {
+  background: #ff375f;
+  width: 100%;
+  height: 100%;
+  border-radius: 2px;
+}
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: #b3b3b3;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 12px 0;
+}
+.controls .icon {
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+.icon.shuffle {
+  width: 10px;
+  height: 10px;
+}
+.icon.prev {
+  width: 30px;
+  height: 30px;
+}
+.icon.play {
+  width: 50px;
+  height: 50px;
+}
+.icon.next {
+  width: 30px;
+  height: 30px;
+}
+.icon.repeat {
+  width: 10px;
+  height: 10px;
+}
+
+.volume-control {
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  gap: 8px;
+}
+.volume-control img {
+  width: 24px;
+  height: 24px;
+}
+.volume-control input[type="range"] {
+  flex: 1;
+  -webkit-appearance: none;
+  height: 4px;
+  background: #3a3a3c;
+  border-radius: 2px;
+  outline: none;
+}
+.volume-control input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: none;
+  background: url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 29.6'>\
+<path fill='%23ff375f' d='M23.6,0c-2.7,0-5.1,1.6-6.6,4C15.5,1.6,13.1,0,10.4,0C4.7,0,0,4.7,0,10.4\
+c0,11.2,16,19.2,16,19.2s16-8,16-19.2C32,4.7,27.3,0,23.6,0z'/>\
+</svg>") no-repeat center;
+  background-size: contain;
+  cursor: pointer;
+  margin-top: -4px; /* ajuste fino vertical */
+}
+
+.volume-control input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border: none;
+  background: url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 29.6'>\
+<path fill='%23ff375f' d='M23.6,0c-2.7,0-5.1,1.6-6.6,4C15.5,1.6,13.1,0,10.4,0C4.7,0,0,4.7,0,10.4\
+c0,11.2,16,19.2,16,19.2s16-8,16-19.2C32,4.7,27.3,0,23.6,0z'/>\
+</svg>") no-repeat center;
+  background-size: contain;
+  cursor: pointer;
+}
