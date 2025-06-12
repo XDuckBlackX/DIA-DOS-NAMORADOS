@@ -42,3 +42,23 @@ function updateTimer() {
 // dispara a cada segundo
 setInterval(updateTimer, 1000);
 updateTimer();
+
+//função de audio
+  document.addEventListener('DOMContentLoaded', function () {
+    const audio = document.getElementById('bg-music');
+    
+    // Tenta tocar automaticamente
+    audio.play().catch(() => {
+      // Se falhar, espera o primeiro clique do usuário
+      const resumeAudio = () => {
+        audio.play();
+        document.removeEventListener('click', resumeAudio);
+      };
+      document.addEventListener('click', resumeAudio);
+    });
+  });
+
+  function toggleDetails() {
+    const cover = document.getElementById("rotatable-cover");
+    cover.classList.toggle("rotated");
+  }
