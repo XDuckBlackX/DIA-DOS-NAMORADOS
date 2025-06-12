@@ -1,4 +1,3 @@
-/* Reset básico */
 * {
   margin: 0;
   padding: 0;
@@ -16,7 +15,9 @@ body {
 
 /* CARD */
 .player-card {
-  width: 340px;
+  width: 100%;
+  max-width: 340px;    /* nunca maior que 340px */
+  margin: 0 16px;      /* espaço nas laterais em telas muito pequenas */
   background: #1c1c1e;
   border-radius: 30px;
   overflow: hidden;
@@ -51,7 +52,7 @@ body {
   backface-visibility: hidden;
   border-radius: 0 0 20px 20px;
   overflow: hidden;
-   border-radius: 20px 20px 20px 20px;
+  border-radius: 20px 20px 20px 20px;
 }
 
 .cover .front img {
@@ -78,7 +79,7 @@ body {
   position: absolute;
   bottom: 16px;
   right: 16px;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
   border: none;
   color: #fff;
   font-size: 24px;
@@ -93,11 +94,13 @@ body {
   padding: 12px 16px 0;
   text-align: left;
 }
+
 .caption h2 {
   color: #fff;
   font-size: 18px;
   margin-bottom: 4px;
 }
+
 .caption .subtitle {
   color: #b3b3b3;
   font-size: 14px;
@@ -106,6 +109,7 @@ body {
 .progress {
   padding: 12px 16px 0;
 }
+
 .bar {
   position: relative;
   background: #3a3a3c;
@@ -113,12 +117,14 @@ body {
   border-radius: 2px;
   margin: 0 0 4px;
 }
+
 .bar .fill {
   background: #ff375f;
   width: 100%;
   height: 100%;
   border-radius: 2px;
 }
+
 .progress-info {
   display: flex;
   justify-content: space-between;
@@ -132,26 +138,32 @@ body {
   align-items: center;
   margin: 12px 0;
 }
+
 .controls .icon {
   cursor: pointer;
   transition: transform 0.3s;
 }
+
 .icon.shuffle {
   width: 10px;
   height: 10px;
 }
+
 .icon.prev {
   width: 30px;
   height: 30px;
 }
+
 .icon.play {
   width: 50px;
   height: 50px;
 }
+
 .icon.next {
   width: 30px;
   height: 30px;
 }
+
 .icon.repeat {
   width: 10px;
   height: 10px;
@@ -163,10 +175,12 @@ body {
   padding: 0 16px;
   gap: 8px;
 }
+
 .volume-control img {
   width: 24px;
   height: 24px;
 }
+
 .volume-control input[type="range"] {
   flex: 1;
   -webkit-appearance: none;
@@ -175,6 +189,7 @@ body {
   border-radius: 2px;
   outline: none;
 }
+
 .volume-control input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   width: 20px;
@@ -187,7 +202,8 @@ c0,11.2,16,19.2,16,19.2s16-8,16-19.2C32,4.7,27.3,0,23.6,0z'/>\
 </svg>") no-repeat center;
   background-size: contain;
   cursor: pointer;
-  margin-top: -4px; /* ajuste fino vertical */
+  margin-top: -4px;
+  /* ajuste fino vertical */
 }
 
 .volume-control input[type="range"]::-moz-range-thumb {
@@ -201,4 +217,64 @@ c0,11.2,16,19.2,16,19.2s16-8,16-19.2C32,4.7,27.3,0,23.6,0z'/>\
 </svg>") no-repeat center;
   background-size: contain;
   cursor: pointer;
+}
+
+
+
+/* Responsivo: ajustar o card para telas menores */
+@media (max-width: 400px) {
+  .cover-container {
+    height: 260px;
+  }
+
+  .cover-container {
+    height: 260px;
+  }
+
+  .cover .back {
+    font-size: 13px;
+    padding: 12px;
+  }
+
+  .details-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 18px;
+  }
+
+  .caption h2 {
+    font-size: 16px;
+  }
+
+  .caption .subtitle {
+    font-size: 13px;
+  }
+
+  .icon.play {
+    width: 40px;
+    height: 40px;
+  }
+
+  .icon.prev,
+  .icon.next {
+    width: 24px;
+    height: 24px;
+  }
+
+  .icon.shuffle,
+  .icon.repeat {
+    width: 8px;
+    height: 8px;
+  }
+
+  .volume-control img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .volume-control input[type="range"]::-webkit-slider-thumb,
+  .volume-control input[type="range"]::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+  }
 }
